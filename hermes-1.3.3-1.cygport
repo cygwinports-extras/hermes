@@ -1,0 +1,15 @@
+DESCRIPTION="Hermes graphics library"
+HOMEPAGE="http://www.clanlib.org/hermes/"
+SRC_URI="http://clanlib.org/download/legacy/${P/#h/H}.tar.bz2"
+SRC_DIR="${P/#h/H}"
+
+CYGCONF_ARGS="--disable-static"
+DOCS="INSTALL.unix"
+HTMLDOCS="docs/api/*.htm"
+DIFF_EXCLUDES="docs"
+
+PKG_NAMES="${PN} lib${PN/#h/H}1 lib${PN/#h/H}-devel"
+PKG_HINTS="setup runtime devel"
+PKG_CONTENTS[0]='usr/share/'
+PKG_CONTENTS[1]='usr/bin/*.dll'
+PKG_CONTENTS[2]='usr/include/ usr/lib/'

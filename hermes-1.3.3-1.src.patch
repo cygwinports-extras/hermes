@@ -1,0 +1,43 @@
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x ltmain.sh -x 'config.*' -x depcomp -x install-sh -x missing -x mkinstalldirs -x autom4te.cache -x '*compile' -x 'intltool*.in' -x 'xml-i18n-*.in' -x '*.pyc' -x '*.mo' -x '*.gmo' -x ABOUT-NLS -x Makevars.template -x COPYING -x INSTALL -x '*.orig' -x '*.rej' -x '*~' -x '*.temp' -x texinfo.tex -x ylwrap -x 'Makefile.in*' -x configure -x gnome-doc-utils.make -x intltool.m4 -x omf.make -x xmldocs.make -x docs origsrc/Hermes-1.3.3/configure.in src/Hermes-1.3.3/configure.in
+--- origsrc/Hermes-1.3.3/configure.in	2003-06-04 03:00:12.000000000 -0500
++++ src/Hermes-1.3.3/configure.in	2006-08-08 15:56:49.739750000 -0500
+@@ -32,7 +32,7 @@
+ AC_SUBST(HERMES_REVISION)
+ AC_SUBST(HERMES_AGE)  
+ 
+-AM_INIT_AUTOMAKE(hermes, $HERMES_VERSION)
++AM_INIT_AUTOMAKE(Hermes, $HERMES_VERSION)
+ AC_LIBTOOL_WIN32_DLL
+ AM_PROG_LIBTOOL
+ dnl AM_MAINTAINER_MODE
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x ltmain.sh -x 'config.*' -x depcomp -x install-sh -x missing -x mkinstalldirs -x autom4te.cache -x '*compile' -x 'intltool*.in' -x 'xml-i18n-*.in' -x '*.pyc' -x '*.mo' -x '*.gmo' -x ABOUT-NLS -x Makevars.template -x COPYING -x INSTALL -x '*.orig' -x '*.rej' -x '*~' -x '*.temp' -x texinfo.tex -x ylwrap -x 'Makefile.in*' -x configure -x gnome-doc-utils.make -x intltool.m4 -x omf.make -x xmldocs.make -x docs origsrc/Hermes-1.3.3/src/Makefile.am src/Hermes-1.3.3/src/Makefile.am
+--- origsrc/Hermes-1.3.3/src/Makefile.am	2002-04-06 08:35:30.000000000 -0600
++++ src/Hermes-1.3.3/src/Makefile.am	2006-08-08 15:30:59.864750000 -0500
+@@ -1,6 +1,6 @@
+ ## Process this file with automake to create Makefile.in
+ 
+-publicheaders = Hermes.h Types.h H_Conv.h H_Clear.h H_Pal.h H_Format.h H_Config.h H_Types.h H_Blit.h
++pkginclude_HEADERS = Hermes.h Types.h H_Conv.h H_Clear.h H_Pal.h H_Format.h H_Config.h H_Types.h H_Blit.h
+ 
+ lib_LTLIBRARIES = libHermes.la
+ 
+@@ -30,19 +30,3 @@
+ .S.o:
+ 	gcc -c -o $@ $<
+ 	cp $@ `echo $@ | sed -e 's/\.lo$$/.o/'`
+-
+-install-data-local:
+-	$(INSTALL) -m 0755 -d $(includedir)/Hermes
+-	for incfile in $(publicheaders); do \
+-	  $(INSTALL) -m 0644 $$incfile $(includedir)/Hermes; \
+-	done
+-
+-uninstall-local:
+-	for incfile in $(publicheaders); do \
+-	  rm -f $(includedir)/Hermes/$$incfile; \
+-	done
+-	rmdir $(includedir)/Hermes
+-
+-libHermes.la: $(libHermes_la_OBJECTS) $(libHermes_la_DEPENDENCIES)
+-	$(LINK) -rpath $(libdir) $(libHermes_la_LDFLAGS) \
+-	$(libHermes_la_OBJECTS) $(libHermes_la_LIBADD) $(LIBS)

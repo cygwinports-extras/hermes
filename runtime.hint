@@ -1,0 +1,19 @@
+category: Graphics Libs
+requires: cygwin
+external-source: hermes
+sdesc: "Hermes graphics library (runtime)"
+ldesc: "Hermes is a graphics library designed to do a very limited number of
+things and do them very well. It is also very easy to incorporate Hermes
+into existing code. Hermes is intended for use either directly in an
+application program or inside another graphics library.
+
+The long feature list includes things like:
+
+        * Palette handling
+        * Clearing surfaces to a specific color
+        * Conversion of images from one format to another
+
+All features are implemented using an internal caching system,
+drastically improving the performance of common operations such as table
+lookups. In addition, on MMX systems, Hermes can use optimized MMX
+assembler to further improve performance."

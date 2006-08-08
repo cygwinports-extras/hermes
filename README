@@ -1,0 +1,103 @@
+hermes
+------------------------------------------
+Hermes is a graphics library designed to do a very limited number of
+things and do them very well. It is also very easy to incorporate Hermes
+into existing code. Hermes is intended for use either directly in an
+application program or inside another graphics library.
+
+The long feature list includes things like:
+
+        * Palette handling
+        * Clearing surfaces to a specific color
+        * Conversion of images from one format to another
+
+All features are implemented using an internal caching system,
+drastically improving the performance of common operations such as table
+lookups. In addition, on MMX systems, Hermes can use optimized MMX
+assembler to further improve performance.
+
+Runtime requirements:
+  cygwin-1.5.21-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  cygwin-1.5.21-1
+  autoconf2.5-2.59-2
+  automake1.9-1.9.6-1
+  binutils-20050610-1
+  cygport-0.2.4-1
+  gawk-3.1.5-2
+  gcc-core-3.4.4-1
+  libtool1.5-1.5.22-1
+  make-3.81-1
+  sed-4.1.5-1
+
+Canonical website:
+  http://www.clanlib.org/hermes/
+
+Canonical download:
+  http://www.clanlib.org/hermes/index.php?main=dls
+
+-------------------------------------------
+
+Build instructions:
+  unpack hermes-1.3.3-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./hermes-1.3.3-X.cygport all
+
+This will create:
+  /usr/src/hermes-1.3.3-X-src.tar.bz2
+  /usr/src/hermes-1.3.3-X.tar.bz2
+  /usr/src/libHermes-devel-1.3.3-X.tar.bz2
+  /usr/src/libHermes1-1.3.3-X.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary package:
+
+  /usr/share/doc/Cygwin/hermes-1.3.3.README
+  /usr/share/doc/hermes-1.3.3/AUTHORS
+  /usr/share/doc/hermes-1.3.3/COPYING
+  /usr/share/doc/hermes-1.3.3/ChangeLog
+  /usr/share/doc/hermes-1.3.3/FAQ
+  /usr/share/doc/hermes-1.3.3/INSTALL
+  /usr/share/doc/hermes-1.3.3/INSTALL.unix
+  /usr/share/doc/hermes-1.3.3/NEWS
+  /usr/share/doc/hermes-1.3.3/README
+  /usr/share/doc/hermes-1.3.3/TODO
+  /usr/share/doc/hermes-1.3.3/html/api-1.htm
+  /usr/share/doc/hermes-1.3.3/html/api-2.htm
+  /usr/share/doc/hermes-1.3.3/html/api-3.htm
+  /usr/share/doc/hermes-1.3.3/html/api-4.htm
+  /usr/share/doc/hermes-1.3.3/html/api.htm
+
+Files included in the runtime library package:
+
+  /usr/bin/cygHermes-1.dll
+
+Files included in the development package:
+
+  /usr/include/Hermes/H_Blit.h
+  /usr/include/Hermes/H_Clear.h
+  /usr/include/Hermes/H_Config.h
+  /usr/include/Hermes/H_Conv.h
+  /usr/include/Hermes/H_Format.h
+  /usr/include/Hermes/H_Pal.h
+  /usr/include/Hermes/H_Types.h
+  /usr/include/Hermes/Hermes.h
+  /usr/include/Hermes/Types.h
+  /usr/lib/libHermes.dll.a
+  /usr/lib/libHermes.la
+
+------------------
+
+Port Notes:
+
+----- version 1.3.3-1 -----
+Initial release for Cygwin.
+
+
+Cygwin port maintained by:
+http://cygwinports.dotsrc.org/
